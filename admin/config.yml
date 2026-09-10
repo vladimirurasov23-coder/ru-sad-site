@@ -1,0 +1,70 @@
+backend:
+  name: github
+  repo: vladimirurasov23-coder/ru-sad-site
+  branch: main
+
+media_folder: "images"
+public_folder: "/images"
+locale: "ru"
+
+logo:
+  src: /images/logo-transparent.png
+  show_in_header: true
+
+collections:
+  - name: site
+    label: "Главная"
+    files:
+      - label: "Настройки главной страницы"
+        name: home
+        file: content/site.json
+        format: json
+        fields:
+          - {label: "Заголовок", name: hero, widget: string}
+          - {label: "Описание", name: lead, widget: text}
+          - {label: "Фон первого экрана", name: heroImage, widget: image}
+          - {label: "Цвет фона", name: background, widget: color}
+          - {label: "Акцентный цвет", name: accent, widget: color}
+          - {label: "Телефон", name: phone, widget: string}
+          - {label: "E-mail", name: email, widget: string}
+          - {label: "VK", name: vk, widget: string}
+          - {label: "Имя архитектора", name: contactName, widget: string}
+          - {label: "Руководитель", name: directorName, widget: string}
+          - {label: "Телефон руководителя", name: directorPhone, widget: string}
+  - name: projects
+    label: "Проекты"
+    folder: content/projects
+    create: true
+    extension: json
+    format: json
+    fields:
+      - {label: "Название", name: title, widget: string}
+      - {label: "Место", name: place, widget: string}
+      - {label: "Категория", name: category, widget: string}
+      - {label: "Обложка", name: cover, widget: image}
+      - {label: "Фотографии", name: gallery, widget: list, field: {label: "Фото", name: image, widget: image}}
+      - {label: "Описание", name: description, widget: text}
+      - {label: "Показывать", name: published, widget: boolean, default: true}
+  - name: reviews
+    label: "Отзывы"
+    folder: content/reviews
+    create: true
+    extension: json
+    format: json
+    fields:
+      - {label: "Имя", name: author, widget: string}
+      - {label: "Отзыв", name: text, widget: text}
+      - {label: "Оценка", name: rating, widget: number, value_type: int, min: 1, max: 5, default: 5}
+      - {label: "Показывать", name: published, widget: boolean, default: false}
+  - name: video
+    label: "Видео"
+    files:
+      - label: "Видео работ"
+        name: works
+        file: content/video.json
+        format: json
+        fields:
+          - {label: "Название", name: title, widget: string}
+          - {label: "Видео", name: video, widget: file, required: false}
+          - {label: "Обложка", name: poster, widget: image, required: false}
+          - {label: "Показывать", name: published, widget: boolean, default: false}

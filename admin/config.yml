@@ -8,7 +8,7 @@ public_folder: "/images"
 locale: "ru"
 
 logo:
-  src: /images/logo-transparent.png
+  src: https://6aa30176e804c5ebe62bbd5d--ru-sad-portfolio-v3.netlify.app/images/logo-transparent.png
   show_in_header: true
 
 collections:
@@ -29,6 +29,7 @@ collections:
           - {label: "E-mail", name: email, widget: string}
           - {label: "VK", name: vk, widget: string}
           - {label: "Имя архитектора", name: contactName, widget: string}
+          - {label: "Роль архитектора", name: contactRole, widget: string}
           - {label: "Руководитель", name: directorName, widget: string}
           - {label: "Телефон руководителя", name: directorPhone, widget: string}
   - name: projects

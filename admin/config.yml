@@ -1,14 +1,12 @@
 backend:
-  name: github
-  repo: vladimirurasov23-coder/ru-sad-site
-  branch: main
+  name: git-gateway
 
 media_folder: "images"
 public_folder: "/images"
 locale: "ru"
 
 logo:
-  src: https://6aa30176e804c5ebe62bbd5d--ru-sad-portfolio-v3.netlify.app/images/logo-transparent.png
+  src: /images/logo-transparent.png
   show_in_header: true
 
 collections:
